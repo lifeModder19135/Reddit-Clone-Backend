@@ -1,9 +1,10 @@
 package com.ntolb.RedditCloneBackend.model;
 
-public class VoteType {
-
-	public VoteType() {
-		// TODO Auto-generated constructor stub
+public enum VoteType {
+	UPVOTE(1), 
+	DOWNVOTE(-1);
+	
+	VoteType(int direction) {
 	}
 
 }
