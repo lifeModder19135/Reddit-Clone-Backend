@@ -1,6 +1,5 @@
 package com.ntolb.RedditCloneBackend.model;
 
-import java.time.Instant;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
