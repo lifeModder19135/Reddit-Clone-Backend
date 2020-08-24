@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@NotBlank(message="Unique user ID is required.")
