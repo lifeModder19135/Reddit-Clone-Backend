@@ -24,6 +24,7 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long userId;
 	@NotBlank(message="Unique user ID is required.")
 	private String username;
 	@NotBlank(message="Encrypted password is required.")
