@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.ntolb.RedditCloneBackend.dto.RegisterRequest;
 import com.ntolb.RedditCloneBackend.model.User;
+import com.ntolb.RedditCloneBackend.repository.UserRepository;
+
+import lombok.AllArgsConstructor;
 
 @Service
+@AllArgsConstructor
 public class AuthService {
 	
-	@Autowired
-	private PasswordEncoder encoder;
+	private final PasswordEncoder encoder;
+	private final UserRepository userRepository;
 	
 	public void signup(RegisterRequest request) {
 		User newUser = new User();
@@ -22,10 +26,7 @@ public class AuthService {
 		newUser.setPassword(encoder.encode(request.getPassword()));
 		newUser.setCreatedDate(Instant.now()) ;
 		newUser.setEnabled(false);
-	}
-	
-	public AuthService() {
-		
+		userRepository.save(newUser);
 	}
 	
 }
