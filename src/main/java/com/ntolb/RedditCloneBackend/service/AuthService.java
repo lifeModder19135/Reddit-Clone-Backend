@@ -3,7 +3,6 @@ package com.ntolb.RedditCloneBackend.service;
 import java.time.Instant;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -34,17 +33,18 @@ public class AuthService {
 		newUser.setCreatedDate(Instant.now()) ;
 		newUser.setEnabled(false);
 		userRepository.save(newUser);
-		generateVerificationToken(newUser);
+		String token = generateVerificationToken(newUser);
 		
 	}
 	
-	private void generateVerificationToken(User user) {
+	private String generateVerificationToken(User user) {
 		
 		String token = UUID.randomUUID().toString();
 		VerificationToken verificationToken = new VerificationToken();
 		verificationToken.setToken(token);
 		verificationToken.setUser(user);
 		verificationTokenRepository.save(verificationToken);
+		return token;
 		
 	}
 	
