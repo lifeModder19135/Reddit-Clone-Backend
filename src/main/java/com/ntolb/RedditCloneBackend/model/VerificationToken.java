@@ -23,7 +23,7 @@ public class VerificationToken {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public long postId;
+	public long tokenId;
 	private String token;
 	@OneToOne(fetch=FetchType.LAZY)
 	private User user;
