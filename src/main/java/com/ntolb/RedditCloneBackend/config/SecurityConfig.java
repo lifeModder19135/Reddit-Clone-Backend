@@ -8,7 +8,15 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
-	public void configure(HttpSecurity httpSecurity) {
+	public void configure(HttpSecurity httpSecurity) throws Exception {
 		
+		httpSecurity
+					.csrf()
+					.disable()
+					.authorizeRequests()
+					.antMatchers("/api/auth/**")
+					.permitAll()
+					.anyRequest()
+					.authenticated();
 	}
 }
