@@ -1,9 +1,19 @@
 package com.ntolb.RedditCloneBackend.model;
 
-public class NotificationEmail {
+import java.time.Instant;
+import java.util.List;
 
-	public NotificationEmail() {
-		// TODO Auto-generated constructor stub
-	}
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class NotificationEmail {
+	
+		private String subject;
+		private String recipient;
+		private String body;
 
 }
