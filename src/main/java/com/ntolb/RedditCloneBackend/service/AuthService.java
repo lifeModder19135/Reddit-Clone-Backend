@@ -34,6 +34,7 @@ public class AuthService {
 		newUser.setEnabled(false);
 		userRepository.save(newUser);
 		String token = generateVerificationToken(newUser);
+		mail
 		
 	}
 	
