@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class VerificationEmailBuilder {
+public class NotificationEmailBuilder {
 	
 	TemplateEngine engine;
 	
