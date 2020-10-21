@@ -7,6 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.ntolb.RedditCloneBackend.dto.RegisterRequest;
+import com.ntolb.RedditCloneBackend.model.NotificationEmail;
 import com.ntolb.RedditCloneBackend.model.User;
 import com.ntolb.RedditCloneBackend.model.VerificationToken;
 import com.ntolb.RedditCloneBackend.repository.UserRepository;
@@ -21,6 +22,7 @@ public class AuthService {
 	private final PasswordEncoder encoder;
 	private final UserRepository userRepository;
 	private final VerificationTokenRepository verificationTokenRepository;
+	private final MailService mailService;
 	
 	public void signup(RegisterRequest request) {
 		
@@ -34,7 +36,9 @@ public class AuthService {
 		newUser.setEnabled(false);
 		userRepository.save(newUser);
 		String token = generateVerificationToken(newUser);
-		mail
+		mailService.sendNotificationEmail(new NotificationEmail(newUser.getEmail(), "New User Account Activation", "Hello " + newUser.getFName()+", "
+				+"Thank you for signing up to be a member of our community! We look forward to hearing from you. To get started, click on the link below: "+
+				"       http://localhost:8080/api/auth/account-verification/"+token));
 		
 	}
 	
