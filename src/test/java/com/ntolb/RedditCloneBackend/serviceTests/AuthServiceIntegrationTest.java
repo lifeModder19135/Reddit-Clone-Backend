@@ -28,6 +28,8 @@ public class AuthServiceIntegrationTest {
 	@Autowired 
 	private AuthService service;
 	
+	private int index;
+	
 	@BeforeEach
 	void init(AuthService service) {
 		
@@ -41,7 +43,7 @@ public class AuthServiceIntegrationTest {
 		
 		
 		
-		//when(calcService.add(20.0,10.0)).thenReturn(30.0);
+		//when(request..add(20.0,10.0)).thenReturn(30.0);
 	}
 	
 }

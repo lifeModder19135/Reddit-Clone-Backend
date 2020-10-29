@@ -31,7 +31,7 @@ public class AuthService {
 		
 		newUser.setUsername(request.getUsername());
 		newUser.setFName(request.getFName());
-		System.out.println("request fname: "+request.getFName()+", User fname: "+newUser.getFName());
+		System.out.println("request fname: "+request.getFName()+", User lname: "+newUser.getFName());
 		newUser.setLName(request.getLName());
 		newUser.setEmail(request.getEmail());
 		newUser.setPassword(encoder.encode(request.getPassword()));
