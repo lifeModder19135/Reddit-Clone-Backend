@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.time.Instant;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -44,7 +46,7 @@ public class UserUnitTests {
 			mockUser2_allArgs = new User();
 		}
 		
-		User mockUser002_allArgsUser = new User("ntolb_01", "123456", "Nate", "Tolbert", "ntolbertu85@gmail.com", );
+		User mockUser002_allArgsUser = new User("ntolb_01", "123456", "Nate", "Tolbert", "ntolbertu85@gmail.com", Instant.now(),true );
 	}
 	
 	@Tag("unit test")
