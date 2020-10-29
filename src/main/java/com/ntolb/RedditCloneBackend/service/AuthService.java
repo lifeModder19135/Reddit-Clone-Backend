@@ -26,9 +26,12 @@ public class AuthService {
 	
 	public void signup(RegisterRequest request) {
 		
+		
 		User newUser = new User();
+		
 		newUser.setUsername(request.getUsername());
 		newUser.setFName(request.getFName());
+		System.out.println("request fname: "+request.getFName()+", User fname: "+newUser.getFName());
 		newUser.setLName(request.getLName());
 		newUser.setEmail(request.getEmail());
 		newUser.setPassword(encoder.encode(request.getPassword()));
