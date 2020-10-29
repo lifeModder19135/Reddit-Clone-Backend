@@ -22,7 +22,7 @@ public class AuthService {
 	private final PasswordEncoder encoder;
 	private final UserRepository userRepository;
 	private final VerificationTokenRepository verificationTokenRepository;
-	private final MailService mailService;
+	private final MailBuildService mailService;
 	
 	public void signup(RegisterRequest request) {
 		
